@@ -7,6 +7,8 @@ async function getData(){
 }
 getData()
 function todo(){
+    document.getElementById("body").innerHTML = ""
+    console.log("działa")
     for(i=0;i<=todolist.length-1;i++){
         const div = document.createElement("div")
         const h1 = document.createElement("h1")
@@ -24,18 +26,11 @@ function todo(){
         }
         const Termin = document.createElement("p")
         Termin.innerHTML = `Pozostałe dni: ${todolist[i].Termin}`
-        checkbox.addEventListener('change',function(){
-            if(checkbox.checked == true){
-
-            }else{
-
-            }
-        })
-
     }
 }
 async function dodaj(){
-    const Termin = document.getElementById("divtermin")
-    const Nazwa = document.getElementById("divnazwa")    
-    const data = await fetch(`http://localhost:3000/add/${Nazwa}/${Termin}`)
+    const Termin = document.getElementById("divtermin").value
+    const Nazwa = document.getElementById("divnazwa").value    
+    const data = await fetch(`http://localhost:3000/add/${Nazwa}/:czy_wykonane/${Termin}`)
+    getData()
 }
