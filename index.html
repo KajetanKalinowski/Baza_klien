@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,5 +20,29 @@
     </div>
     <div id="body"></div>
     <script src="app.js"></script>
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+    <script>
+        var xValues = ["Nie wykonane", "Wykonane"];
+        var yValues = [1,1];
+        var barColors = ["red", "blue"];
+        
+        new Chart("myChart", {
+          type: "bar",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            title: {
+              display: true,
+              text: "Zadania"
+            }
+          }
+        });
+        </script>
 </body>
 </html>

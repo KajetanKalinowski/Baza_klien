@@ -20,7 +20,7 @@ function todo(){
         h1.innerHTML = todolist[i].Nazwa
         div.appendChild(h1)
         document.getElementById("body").appendChild(div)
-        const checkbox = document.createElement("input")
+        var checkbox = document.createElement("input")
         checkbox.type = "checkbox"
         div.appendChild(checkbox)
         if(todolist[i].czy_wykonane == 1){
