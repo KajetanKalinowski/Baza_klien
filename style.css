@@ -1,4 +1,24 @@
 body{
+    display: block;
     margin: 0px;
+    gap: 10px;
+    overflow-y: scroll;
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+
   
+}
+div{
+    
+    gap:10px;
+    background-color: aquamarine;
+    border: 2px solid black;
+    color: black;
+}
+#wpisywanie{
+    height: 100px;
+    width: 181px;
 }

@@ -32,4 +32,15 @@ app.get("/add/:Nazwa/:czy_wykonane/:Termin",function(req,res){
     })
 })
 
+app.get("/del/:Nazwa",function(req,res){
+    const Nazwa = req.params.Nazwa
+    const sql = `DELETE FROM todolist WHERE id = '${Nazwa}'`
+    con.query(sql, function(err,result,fields){
+        if(err) {
+            console.log(err)
+            res.send("Nie usunięto")
+        }else res.send("usunięto")
+    })
+})
+
 app.listen(3000)    
